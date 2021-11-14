@@ -49,7 +49,7 @@ class FindSearchTags(object):
 
         if tag == 'S':
             indexer = AnnoyIndexer(self.modelW2V, 100)
-            return self.modelW2V.wv.most_similar(query, topn = topN + 1, indexer=indexer)
+            return self.modelW2V.wv.most_similar(str(query+'_NOUN'), topn = topN + 1, indexer=indexer)
         else:
             return 'None'
 
